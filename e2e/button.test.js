@@ -5,6 +5,7 @@ describe("Page start", () => {
   let page;
 
   beforeEach(async () => {
+    jest.setTimeout(20000);
     browser = await puppeteer.launch({
       headless: false,
       slowMo: 50,
@@ -16,8 +17,7 @@ describe("Page start", () => {
 
   test("button click", async () => {
     try {
-      jest.setTimeout(20000);
-      await page.goto("http://localhost:52330/src/index.html");
+      await page.goto("http://localhost:9000");
       const button = await page.$(".button-tooltip ");
       await button.click();
       await page.waitForSelector(".container");

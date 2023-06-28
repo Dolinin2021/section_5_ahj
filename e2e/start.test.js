@@ -5,6 +5,7 @@ describe("Page start", () => {
   let page;
 
   beforeEach(async () => {
+    jest.setTimeout(20000);
     browser = await puppeteer.launch({
       headless: false,
       slowMo: 50,
@@ -16,7 +17,7 @@ describe("Page start", () => {
 
   test("start", async () => {
     try {
-      await page.goto("http://localhost:52330/src/index.html");
+      await page.goto("http://localhost:9000");
       await page.waitForSelector("body");
     } catch(err) {
       console.log(err.message);
