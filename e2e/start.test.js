@@ -19,11 +19,10 @@ describe("Page start", () => {
     try {
       await page.goto("http://localhost:9000");
       await page.waitForSelector("body");
-    } catch(err) {
+    } catch (err) {
       console.log(err.message);
       return false;
     }
-
   });
 
   afterEach(async () => {
