@@ -8,7 +8,7 @@ describe("Popovers", () => {
   let server = null;
   const baseUrl = "http://localhost:9000";
 
-  beforeAll(async () => {
+  beforeEach(async () => {
     server = fork(`${__dirname}/e2e.server.js`);
     await new Promise((resolve, reject) => {
       server.on("error", reject);
