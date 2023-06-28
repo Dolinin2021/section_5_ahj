@@ -5,17 +5,17 @@ describe("Page start", () => {
   let page;
 
   beforeEach(async () => {
-    jest.setTimeout(20000);
     browser = await puppeteer.launch({
-      // headless: false,
-      // slowMo: 50,
-      // devtools: true,
+      headless: false,
+      slowMo: 50,
+      devtools: true,
     });
 
     page = await browser.newPage();
   });
 
   test("button click", async () => {
+    jest.setTimeout(20000);
     try {
       await page.goto("http://localhost:9000");
       const button = await page.$(".button-tooltip ");

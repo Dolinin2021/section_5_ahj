@@ -1,14 +1,13 @@
 import puppetteer from "puppeteer";
 import { fork } from "child_process";
 
-describe("Credit Card Validator form", () => {
+describe("Popovers", () => {
   let browser = null;
   let page = null;
   let server = null;
   const baseUrl = "http://localhost:9000";
 
   beforeAll(async () => {
-    jest.setTimeout(20000);
     server = fork(`${__dirname}/e2e.server.js`);
     await new Promise((resolve, reject) => {
       server.on("error", reject);
@@ -33,6 +32,7 @@ describe("Credit Card Validator form", () => {
   });
 
   test("should add do something", async () => {
+    jest.setTimeout(20000);
     await page.goto(baseUrl);
   });
 });
