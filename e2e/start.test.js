@@ -7,9 +7,9 @@ describe("Page start", () => {
   beforeEach(async () => {
     jest.setTimeout(20000);
     browser = await puppeteer.launch({
-      headless: false,
-      slowMo: 50,
-      devtools: true,
+      // headless: false,
+      // slowMo: 50,
+      // devtools: true,
     });
 
     page = await browser.newPage();
