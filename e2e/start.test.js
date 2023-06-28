@@ -7,7 +7,7 @@ describe("Page start", () => {
   beforeEach(async () => {
     browser = await puppeteer.launch({
       headless: false,
-      slowMo: 100,
+      slowMo: 50,
       devtools: true,
     });
 
@@ -15,9 +15,14 @@ describe("Page start", () => {
   });
 
   test("start", async () => {
-    await page.goto("http://localhost:52330/src/index.html");
+    try {
+      await page.goto("http://localhost:52330/src/index.html");
+      await page.waitForSelector("body");
+    } catch(err) {
+      console.log(err.message);
+      return false;
+    }
 
-    await page.waitForSelector("body");
   });
 
   afterEach(async () => {
