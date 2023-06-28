@@ -1,9 +1,15 @@
 {
   "plugins": ["prettier"],
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "globals": {
+    "$": true,
+    "require": true,
+    "process": true
+  },
   "env": {
     "es6": true,
     "browser": true,
+    "node": true,
     "jest/globals": true
   },
   "parserOptions": {
