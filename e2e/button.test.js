@@ -1,5 +1,6 @@
 import puppeteer from "puppeteer";
 
+jest.setTimeout(20000);
 describe("Page start", () => {
   let browser;
   let page;
@@ -15,7 +16,6 @@ describe("Page start", () => {
   });
 
   test("button click", async () => {
-    jest.setTimeout(20000);
     try {
       await page.goto("http://localhost:9000");
       const button = await page.$(".button-tooltip ");

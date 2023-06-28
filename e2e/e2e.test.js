@@ -1,6 +1,7 @@
 import puppetteer from "puppeteer";
 import { fork } from "child_process";
 
+jest.setTimeout(20000);
 describe("Popovers", () => {
   let browser = null;
   let page = null;
@@ -32,7 +33,6 @@ describe("Popovers", () => {
   });
 
   test("should add do something", async () => {
-    jest.setTimeout(20000);
     await page.goto(baseUrl);
   });
 });
