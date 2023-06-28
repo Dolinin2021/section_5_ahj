@@ -3,9 +3,9 @@ import { fork } from "child_process";
 
 jest.setTimeout(40000);
 describe("Popovers", () => {
-  let browser = null;
-  let page = null;
-  let server = null;
+  let browser;
+  let page;
+  let server;
 
   beforeAll(async () => {
     server = fork(`${__dirname}/e2e.server.js`);
