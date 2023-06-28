@@ -19,9 +19,9 @@ describe("Popovers", () => {
     });
 
     browser = await puppetteer.launch({
-      headless: false, // show gui
-      slowMo: 250,
-      devtools: true, // show devTools
+      // headless: false, // show gui
+      // slowMo: 250,
+      // devtools: true, // show devTools
     });
     page = await browser.newPage();
   });
@@ -41,5 +41,5 @@ describe("Popovers", () => {
   afterAll(async () => {
     await browser.close();
     server.kill();
-  }, 100000);
+  });
 });
